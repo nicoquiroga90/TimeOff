@@ -10,7 +10,7 @@ function MemberDetails({ member }) {
 
       <div className="form-container">
         {member.assigned_dayoff >= member.allowed_dayoff ? (
-          <p>You have used all your allowed days off. 😞</p>
+          <p>You have used all your allowed days off 😅</p>
         ) : (
           <CreateTimeoff memberId={member.id} maxDaysoff={member.allowed_dayoff} />
         )}

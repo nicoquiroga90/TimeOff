@@ -1,7 +1,7 @@
 .container-section {
-  background-color:  #ffb98a;
+  background-color: #ffb98a;
 }
-.container-heading .logo{
+.container-heading .logo {
   height: 4em;
   padding: 10px 0;
   padding-right: 4em;
@@ -9,6 +9,7 @@
 
 .container-section {
   display: flex;
+  height: 69em;
 }
 
 .left-section {
@@ -16,14 +17,16 @@
   margin-right: 20px;
 }
 
-.container-section .TeamMember, .MyCalendar {
-  border-radius: 15px; 
-  background-color: rgb(255, 255, 255); 
-  padding: 20px; 
+.container-section .TeamMember,
+.MyCalendar {
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
   margin: 2em;
 }
 
-.container-section .TeamMember:hover, .container-section .MyCalendar:hover  {
+.container-section .TeamMember:hover,
+.container-section .MyCalendar:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0);
   transition: 0.3s;
@@ -34,17 +37,17 @@
   margin-left: 20px;
 }
 
-.container-section .CreateMember, .DayOff {
-  border-radius: 15px; 
-  background-color: rgb(255, 255, 255); 
-  padding: 20px; 
+.container-section .CreateMember,
+.DayOff {
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
   margin: 2em;
 }
 
-.container-section .CreateMember:hover, .container-section .DayOff:hover  {
+.container-section .CreateMember:hover,
+.container-section .DayOff:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0);
   transition: 0.3s;
 }
-
-

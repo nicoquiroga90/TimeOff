@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { TeamDataContext } from "../component/Context";
-import '../styles/teamDetails.css'
+import "../styles/teamDetails.css";
 
 const TeamMembers = () => {
   const { code } = useParams();
@@ -21,8 +21,10 @@ const TeamMembers = () => {
     <div className="Team-Member-container">
       <h2>Team Members</h2>
       {teamMembers.length === 0 ? (
-        <p>No team members found. <br />
-        Create a new member using the button in the panel.</p>
+        <p>
+          No team members found. <br />
+          Create a new member using the button in the panel.
+        </p>
       ) : (
         <ul>
           {teamMembers.map((member) => (

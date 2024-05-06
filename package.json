@@ -30,8 +30,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start-server": "node src/backend/server.js",
-    "start-frontend": "react-scripts start",
+    "server": "node src/backend/server.js",
+    "frontend": "react-scripts start",
     "start": "npm run start-server & npm run start-frontend",
     "build": "react-scripts build",
     "test": "react-scripts test",

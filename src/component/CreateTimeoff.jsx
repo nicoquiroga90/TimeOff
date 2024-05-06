@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { apiPath } from "../api";
 import { TeamDataContext } from "../component/Context";
-import '../styles/createTimeoff.css'
+import "../styles/createTimeoff.css";
 
 function CreateTimeoff() {
   const { members, teams } = useContext(TeamDataContext);
@@ -83,13 +83,19 @@ function CreateTimeoff() {
   };
 
   return (
-    <div  className="createTimeOff-container">
-      <button className="book-timeoff" onClick={() => setIsFormVisible(true)}>Book Time Off</button>
+    <div className="createTimeOff-container">
+      <button className="book-timeoff" onClick={() => setIsFormVisible(true)}>
+        Book Time Off
+      </button>
       {isFormVisible && (
-        <form className ="createTimeoff-form" onSubmit={handleSubmit}>
+        <form className="createTimeoff-form" onSubmit={handleSubmit}>
           <div>
             <label>Member:</label>
-            <select className= "createTimeForm-select" value={selectedMember} onChange={handleMemberChange}>
+            <select
+              className="createTimeForm-select"
+              value={selectedMember}
+              onChange={handleMemberChange}
+            >
               <option value="">Select Member</option>
               {currentTeamMembers.map((member) => (
                 <option key={member.id} value={member.id}>

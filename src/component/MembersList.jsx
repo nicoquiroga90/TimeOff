@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Member from "../pages/Member";
 import { apiPath } from '../api';
@@ -69,4 +69,3 @@ const MembersList = ({ teamId }) => {
 };
 
 export default MembersList;
-

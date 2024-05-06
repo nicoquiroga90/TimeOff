@@ -1,13 +1,12 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { apiPath } from '../api';
-import { TeamDataContext } from '../component/Context';
-import '../styles/createMember.css'
+import { apiPath } from "../api";
+import { TeamDataContext } from "../component/Context";
+import "../styles/createMember.css";
 
 function CreateMember() {
-  const { code } = useParams(); 
-  const contextData = useContext(TeamDataContext);
-  const teams = contextData.teams;
+  const { code } = useParams();
+  const { teams, refreshTeamData } = useContext(TeamDataContext);
 
   const [teamId, setTeamId] = useState(null);
   const [memberData, setMemberData] = useState({
@@ -15,11 +14,11 @@ function CreateMember() {
     last_name: "",
     email: "",
     color: "#000000",
-    allowed_dayoff: 0, 
+    allowed_dayoff: 0,
   });
 
   useEffect(() => {
-    const team = teams.find(team => team.team_code === code);
+    const team = teams.find((team) => team.team_code === code);
     if (team) {
       setTeamId(team.id);
     } else {
@@ -31,7 +30,7 @@ function CreateMember() {
     e.preventDefault();
 
     try {
-      const response = await fetch(apiPath('/members'), {
+      const response = await fetch(apiPath("/members"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,13 +38,20 @@ function CreateMember() {
         body: JSON.stringify({
           ...memberData,
           team_id: teamId,
-          assigned_dayoff: 0, 
+          assigned_dayoff: 0,
         }),
       });
 
       if (response.ok) {
         alert("Member created successfully!");
-        setMemberData({ first_name: "", last_name: "", email: "", color: "#000000", allowed_dayoff: 0 });
+        refreshTeamData();
+        setMemberData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          color: "#000000",
+          allowed_dayoff: 0,
+        });
       } else {
         const data = await response.json();
         alert(data.error || "Failed to create member. Please try again.");
@@ -58,7 +64,7 @@ function CreateMember() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setMemberData(prevState => ({
+    setMemberData((prevState) => ({
       ...prevState,
       [name]: value,
     }));

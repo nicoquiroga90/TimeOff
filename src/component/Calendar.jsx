@@ -4,13 +4,15 @@ import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { TeamDataContext } from "../component/Context";
 import { apiPath } from "../api";
-import '../styles/calender.css'
+import "../styles/calender.css";
+import "../styles/deleteTimeoff.css";
 
 function MyCalendar() {
   const localizer = dayjsLocalizer(dayjs);
-  const { teams, members } = useContext(TeamDataContext);
+  const { teams, members, refreshTeamData } = useContext(TeamDataContext);
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   useEffect(() => {
     const teamCode = window.location.pathname.split("/").pop();
@@ -34,6 +36,7 @@ function MyCalendar() {
             (member) => member.id === event.member_id
           );
           return {
+            id: event.id,
             start: new Date(event.start_date),
             end: new Date(event.end_date),
             title: member ? `${member.first_name} ${member.last_name}` : "",
@@ -43,6 +46,7 @@ function MyCalendar() {
         });
 
         setEvents(formattedEvents);
+        refreshTeamData();
       } catch (error) {
         console.error("Error fetching events:", error);
       }
@@ -53,6 +57,31 @@ function MyCalendar() {
 
   const handleEventClick = (event) => {
     setSelectedEvent(event);
+  };
+
+  const handleDeleteEvent = async () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const confirmDelete = async () => {
+    try {
+      await fetch(apiPath(`/timeoff`), {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: selectedEvent.id }),
+      });
+      setEvents(events.filter((event) => event.id !== selectedEvent.id));
+      setSelectedEvent(null);
+      setShowDeleteConfirmation(false);
+    } catch (error) {
+      console.error("Error deleting event:", error);
+    }
+  };
+
+  const cancelDelete = () => {
+    setShowDeleteConfirmation(false);
   };
 
   return (
@@ -83,6 +112,14 @@ function MyCalendar() {
         <div>
           <h3>{selectedEvent.title}</h3>
           <p>{selectedEvent.description}</p>
+          <button onClick={handleDeleteEvent}>Delete Event</button>
+          {showDeleteConfirmation && (
+            <div className="delete-confirmation">
+              <p>Are you sure you want to delete this event?</p>
+              <button onClick={confirmDelete}>Yes</button>
+              <button onClick={cancelDelete}>No</button>
+            </div>
+          )}
         </div>
       )}
     </div>

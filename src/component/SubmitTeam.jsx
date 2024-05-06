@@ -1,12 +1,11 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { apiPath } from '../api';
-import '../styles/home.css'
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { apiPath } from "../api";
+import "../styles/home.css";
 
-
-const SubmitTeam = () => { 
+const SubmitTeam = () => {
   const navigate = useNavigate();
-  const [inputCode, setInputCode] = useState('');
+  const [inputCode, setInputCode] = useState("");
 
   const handleInputChange = (event) => {
     setInputCode(event.target.value);
@@ -14,21 +13,21 @@ const SubmitTeam = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch(apiPath('/teams'));
+      const response = await fetch(apiPath("/teams"));
       if (!response.ok) {
-        throw new Error('Failed to fetch teams');
+        throw new Error("Failed to fetch teams");
       }
       const teams = await response.json();
-      
+
       const team = teams.find((team) => team.team_code === inputCode);
       if (team) {
-        navigate(`/team/${inputCode}`); 
+        navigate(`/team/${inputCode}`);
       } else {
-        window.alert('Invalid team code');
+        window.alert("Invalid team code");
       }
     } catch (error) {
-      console.error('Error fetching teams:', error);
-      window.alert('Failed to fetch teams');
+      console.error("Error fetching teams:", error);
+      window.alert("Failed to fetch teams");
     }
   };
 
@@ -42,7 +41,9 @@ const SubmitTeam = () => {
         onChange={handleInputChange}
         placeholder="Enter Team Code"
       />
-      <button className='button-submit' onClick={handleSubmit}>Submit</button>
+      <button className="button-submit" onClick={handleSubmit}>
+        Submit
+      </button>
     </div>
   );
 };
