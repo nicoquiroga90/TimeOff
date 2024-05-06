@@ -1,6 +1,7 @@
 {
   "version": 2,
   "builds": [
-    { "src": "/backend/app.js", "use": "@vercel/node" }
+    { "src": "/src/backend/server.js", "use": "@vercel/node" },
+    { "src": "/src/build", "use": "@vercel/static" }
   ]
 }
