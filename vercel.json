@@ -1,9 +1,6 @@
 {
   "version": 2,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/backend"
-    }
+  "builds": [
+    { "src": "/backend/app.js", "use": "@vercel/node" }
   ]
 }
