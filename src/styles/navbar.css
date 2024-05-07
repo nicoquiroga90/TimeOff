@@ -5,7 +5,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-background);
-  width: fit-content;
 }
 
 .logo {
@@ -44,7 +43,7 @@
 .toggle-icon {
   width: 50px;
   cursor: pointer;
-  padding-right: 2em;
+  margin-right: 2em;
 }
 
 .dark .navbar {
