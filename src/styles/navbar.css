@@ -1,46 +1,44 @@
+@import "../index.css";
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #b5e6f9;
-  color: rgb(0, 0, 0);
+  background-color: var(--color-background);
+  width: fit-content;
 }
 
 .logo {
   padding-left: 4em;
-  height: 2em;
+  height: 8em;
 }
 
 .navbar-center {
-  padding-left: 18em;
+  color: var(--color-links);
+  margin: 4em;
 }
 
 .navbar-center a {
   text-decoration: none;
-  color: #000000;
+  color: var(--color-links);
 }
 
 .navbar-text {
-  margin: 1em;
-  font-family: 'Poppins';
+  margin: 1.5em;
   font-size: 1.1em;
 }
 
-.container-create-team {
-  padding-left: 12em;
-}
-
 .button-create-team {
-  height: 2em;
+  height: 3em;
   width: 10em;
-  background-color: #EF8038;
-  color: white;
+  background-color: var(--color-buttons);
+  color: var(--color-links);
   border-radius: 15px;
-  border: none;
+  border: 3px solid var(--color-borders);
   text-decoration: none;
-  font-weight: 600;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: bolder;
 }
 
 .toggle-icon {
@@ -49,12 +47,13 @@
   padding-right: 2em;
 }
 
-.dark .navbar{
+.dark .navbar {
   background: #000;
   color: #fff;
-  border: 1px solid #EF8038;
+  border: 1px solid #ef8038;
 }
 
-.dark ul li a, .dark .navbar-text {
+.dark ul li a,
+.dark .navbar-text {
   color: #ffffff;
 }

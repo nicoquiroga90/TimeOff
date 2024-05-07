@@ -2,57 +2,64 @@
   margin-top: 4em;
   margin-left: 1em;
   margin-right: 1em;
-  font-style: italic;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 2em;
-  font-weight: 800;
+  font-weight: bolder;
+  color: var(--color-text);
+  background-color: var(--color-borders);
+  width: fit-content;
+  padding: 1% 1em;
+ border-radius: 15px;
 }
-
 .main-subheader {
-  margin: 1em;
-  font-weight: 200;
-  font-family:'Poppins';
+  color: var(--color-text);
+  text-align: left;
+  background-color: var(--color-borders);
+  padding: 1.2em;
+  font-size: 1.3em;
+  margin: 0em 0em 0em 1em;
+  border-radius: 15px;
+  width: 14em;
 }
 
-.main-section{
+.main-section {
   display: flex;
+  background-color: var(--color-background);
+  opacity: 95%;
 }
 
-.main-image-container{
+.main-image-container {
   margin: 5em;
 }
 
 #teamCodeInput {
   margin: 1em;
   border-radius: 15px;
-  border: 2px solid #EF8038;
+  border: 2px solid var(--color-borders);
   text-align: center;
-  height: 2em;
-  width: 10em;
+  height: 2.2em;
   outline: none;
+  font-size: 1em;
 }
 
 #teamCodeInput::placeholder {
   text-align: center;
-  color: gray;
+  color: var(--color-borders);
 }
 
 #teamCodeInput:focus::placeholder {
-  color: transparent; 
+  color: transparent;
 }
 
 .submitTeam-container {
   display: flex;
   flex-direction: column;
-  width: 90%;
   margin: 2em;
   align-items: center;
-  font-family: 'Poppins';
 }
 
 .submitTeam-container label {
   font-size: 20px;
-  color: #000000;
+  color: var(--color-text);
   font-weight: 800;
 }
 
@@ -63,7 +70,7 @@
 .button-submit {
   height: 2em;
   width: 10em;
-  background-color: #EF8038;
+  background-color: var(--color-buttons);
   color: white;
   border-radius: 15px;
   border: none;
@@ -72,8 +79,8 @@
   cursor: pointer;
 }
 
-.testimonials-container{
-    margin: 3em 0em;
+.testimonials-container {
+  margin: 3em 0em;
 }
 
 .home-container {
@@ -84,7 +91,7 @@
 .testim-header {
   margin: 1em;
   font-style: italic;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 2em;
   font-weight: 800;
 }
@@ -93,7 +100,8 @@
   background: #000000;
 }
 
-.dark .main-header, .dark .testim-header {
+.dark .main-header,
+.dark .testim-header {
   color: #ffffff;
 }
 

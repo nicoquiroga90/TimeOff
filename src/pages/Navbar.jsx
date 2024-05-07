@@ -31,7 +31,7 @@ function Navbar({theme, setTheme}) {
   return (
     <div className="navbar">
 
-      <img src="/logo.svg" alt="Logo" className="logo" />
+      <img src="/logo.png" alt="Logo" className="logo" />
 
       <div className="navbar-center">
         <Link to="#about" smooth>

@@ -1,6 +1,26 @@
+html{
+  height: 100vh;
+  width: 100vw;
+  scroll-behavior: smooth; 
+}
+
 body {
   margin: 0;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
+:root {
+  --color-background: #fbb498;
+  --color-buttons: #f8c681;
+  --color-text: #bec47e;
+  --color-links: #9bb78f;
+  --color-borders: #98908d;
+}
+
+  /* --color-background: #fbb498;
+  --color-buttons: #f8c681;
+  --color-text: #bec47e;
+  --color-links: #9bb78f;
+  --color-borders: #98908d; */
