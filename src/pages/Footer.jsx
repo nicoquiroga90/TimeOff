@@ -7,22 +7,22 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-section">
         <div className="logo-col">
-          <img src="/logo.svg" alt="Logo" />
+          <img src="/logo.png" alt="Logo" className='logo' />
         </div>
         <div className="services-col">
           <h3>Services</h3>
           <ul>
             <li>Login</li>
+            <li>About TimeOFF</li>
             <li>Prices</li>
-            <li>Help Center</li>
           </ul>
         </div>
         <div className="contact-col" id="contact">
           <h3>Contact Us</h3>
           <ul>
-            <li><MdLocationOn />Enghavevej 80C, Sal 3 2450 København </li>
-            <li><MdPhone /> +45 98765432</li>
-            <li><MdEmail /> info@hackyourfuture.dk</li>
+            <li><MdLocationOn />Havtornvej 25, 2640 Hedehusene 🇩🇰 </li>
+            <li><MdPhone /> +45 5265 6579</li>
+            <li><MdEmail /> nicoq1290@gmail.com</li>
           </ul>
         </div>
         <div className="social-col">

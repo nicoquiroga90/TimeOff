@@ -13,9 +13,12 @@ body {
 
 :root {
   --color-background: #fbb498;
+  --color-backgroundlight: #fbc3ad;
   --color-buttons: #f8c681;
-  --color-text: #bec47e;
-  --color-links: #9bb78f;
+  --color-text: #47a67e;
+  --color-textlight: #83c5ab;
+   --color-links: #9bb78f;
+  --color-linkslight: #9bb78f;
   --color-borders: #98908d;
 }
 

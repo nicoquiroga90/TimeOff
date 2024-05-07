@@ -5,7 +5,7 @@
   margin-top: 3%;
 }
 .carousel .slide {
-  background: var(--color-background);
+  background: var(--color-backgroundlight);
   height: 100%;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .myCarousel {
-    background: var(--color-text);
+    background: var(--color-textlight);
     margin-top: -6%;
     margin-left: initial;
     padding-top: 6%;
@@ -52,14 +52,14 @@
   margin-top: 0;
   padding-top: 0;
   font-weight: 500;
-  color: var(--color-borders);
+  color: var(--color-text);
   font-size: 14px;
 }
 
 .myCarousel p {
   font-weight: 100;
   line-height: 29px;
-  color: var(--color-borders);
+  color: whitesmoke;
   font-size: 15px;
   max-height: 67px;
   font-weight: 700;
