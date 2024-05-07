@@ -51,7 +51,7 @@ function Navbar({theme, setTheme}) {
         <CreateTeam setTeamsDatabase={setTeamsDatabase} />
       </div>
 
-      <img onClick={()=>{toggle_mode()}} src={theme === 'light' ? "/day.png" : "/night.png"} alt="" className='toggle-icon'/>
+       {/* <img onClick={()=>{toggle_mode()}} src={theme === 'light' ? "/day.png" : "/night.png"} alt="" className='toggle-icon'/> */}
     </div>
   );
 }
