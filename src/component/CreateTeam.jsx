@@ -1,10 +1,15 @@
+import { useState } from "react";
 import "../index.css";
 import { apiPath } from "../api";
 import "../styles/navbar.css";
+import Loading from "./Loading"; 
 
 const CreateTeam = ({ setTeamsDatabase }) => {
+  const [isLoading, setIsLoading] = useState(false); 
+
   const handleCreateTeam = async () => {
     try {
+      setIsLoading(true); 
       const randomCode = Math.random()
         .toString(36)
         .substring(2, 8)
@@ -13,10 +18,11 @@ const CreateTeam = ({ setTeamsDatabase }) => {
       const newName = prompt("Enter new team name:");
 
       if (!newName) {
+        setIsLoading(false); 
         return;
       }
 
-      const response = await fetch(apiPath("/teams"), {
+      const response = await fetch( "http://localhost:4051/api/teams" || apiPath("/teams"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,13 +42,22 @@ const CreateTeam = ({ setTeamsDatabase }) => {
     } catch (error) {
       console.error("Error creating team:", error);
       window.alert("Failed to create team");
+    } finally {
+      setIsLoading(false); 
     }
   };
+
   return (
-    <button className="button-create-team" onClick={handleCreateTeam}>
-      Create Team
-    </button>
+    <div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <button className="button-create-team" onClick={handleCreateTeam}>
+          Create Team
+        </button>
+      )}
+    </div>
   );
 };
 
-export default CreateTeam
+export default CreateTeam;

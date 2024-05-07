@@ -7,6 +7,7 @@ import Testimonials from "../component/Testimonials";
 import About from "../component/About";
 import Footer from "./Footer";
 import FreeTrial from "../component/FreeTrial";
+import Loading from "../component/Loading";
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);

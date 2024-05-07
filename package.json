@@ -16,6 +16,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
     "knex": "^3.1.0",
+    "ldrs": "^1.0.1",
     "mysql2": "^3.9.2",
     "pg": "^8.11.3",
     "postgres": "^3.4.3",
@@ -30,14 +31,14 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
- "scripts": {
-  "server": "node src/backend/server.js",
-  "frontend": "cross-env PORT=3000 react-scripts start",
-  "start": "concurrently \"npm run server\" \"npm run frontend\"",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-},
+  "scripts": {
+    "server": "node src/backend/server.js",
+    "frontend": "cross-env PORT=3000 react-scripts start",
+    "start": "concurrently \"npm run server\" \"npm run frontend\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

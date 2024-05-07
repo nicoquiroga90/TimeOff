@@ -2,7 +2,7 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--color-background);
 }
@@ -15,6 +15,7 @@
 .navbar-center {
   color: var(--color-textlight);
   margin: 0 14em;
+  font-weight: 700;
 }
 
 .navbar-center a {
@@ -22,7 +23,7 @@
   color: var(--color-textlight);
 }
 
-.navbar-center a :hover{
+.navbar-center a :hover {
   text-decoration: none;
   color: var(--color-text);
 }
@@ -45,7 +46,7 @@
   -webkit-text-stroke: 1.1px;
 }
 
-.button-create-team:hover{
+.button-create-team:hover {
   height: 3em;
   width: 10em;
   background-color: var(--color-textlight);
@@ -57,7 +58,6 @@
   font-size: 1em;
   -webkit-text-stroke: 1.1px;
 }
-
 
 .toggle-icon {
   width: 50px;
