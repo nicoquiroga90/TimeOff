@@ -15,7 +15,7 @@ function CreateTimeoff() {
     (team) => team.team_code === window.location.pathname.split("/").pop()
   );
   const currentTeamMembers = members.filter(
-    (member) => member.team_id === currentTeam.id
+    (member) => member.team_id === currentTeam?.id
   );
 
   const handleMemberChange = (e) => {
@@ -39,8 +39,8 @@ function CreateTimeoff() {
       return;
     }
 
-    const selectedMemberData = currentTeamMembers.find(
-      (member) => member.id === parseInt(selectedMember)
+    const selectedMemberData = currentTeamMembers?.find(
+      (member) => member?.id === parseInt(selectedMember)
     );
     if (!selectedMemberData) {
       alert("Please select a valid member.");
@@ -97,7 +97,7 @@ function CreateTimeoff() {
               onChange={handleMemberChange}
             >
               <option value="">Select Member</option>
-              {currentTeamMembers.map((member) => (
+              {currentTeamMembers?.map((member) => (
                 <option key={member.id} value={member.id}>
                   {member.first_name} {member.last_name}
                 </option>
