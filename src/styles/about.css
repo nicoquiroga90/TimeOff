@@ -1,20 +1,34 @@
-.about-container{
+.about-section {
+  display: flex;
+  background-color: var(--color-backgroundlight);
+  padding: 2em;
+  gap: 3em;
+}
+
+.about-container {
   text-align: left;
-  border: 1px solid #86d9fb;
-  margin: 2em;
-  padding: 1em;
-  font-family: 'Poppins';
+  border: 10px solid var(--color-borders);
+  margin: 0 1em 0 0;
+  padding: 0.5em;
+  color: var(--color-textlight);
+  background-color: whitesmoke;
+  font-weight: 500;
+  border-radius: 15px;
 }
 
-.about-title{
-color: #EF8038;
-
+.about-title {
+  color: var(--color-text);
+  font-size: 2em;
+  margin: auto;
+  padding: 0.2em;
 }
 
-.dark .about-container{
-    color: #ffffff;
+.about-text {
+  margin: auto;
+  padding: 0.5em;
 }
 
-.about-container{
-    border: 1px solid  #EF8038;
+
+.dark .about-container {
+  color: #ffffff;
 }

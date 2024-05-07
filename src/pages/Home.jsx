@@ -4,9 +4,9 @@ import { apiPath } from "../api";
 import Navbar from "./Navbar";
 import "../styles/home.css";
 import Testimonials from "../component/Testimonials";
-import PriceCard from "../component/PriceCard";
 import About from "../component/About";
 import Footer from "./Footer";
+import FreeTrial from "../component/FreeTrial";
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -40,10 +40,10 @@ const Home = () => {
       <Navbar theme={theme} setTheme={setTheme} />
       <section className="main-section">
         <div className="headers-container">
-          <h2 className="main-header">TimeOff</h2>
+          <h2 className="main-header">TimeOFF</h2>
           <h3 className="main-subheader">
-            TimeOff is a web application designed to simplify the process of
-            managing vacations and time off for teams within a company. It
+            TimeOFF is a web application designed to simplify the process of
+            managing vacations and time off for teams within a company. <br /><br />It
             provides a user-friendly interface for creating teams, managing team
             members, and tracking their time off.
           </h3>
@@ -55,12 +55,11 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="testimonials-container">
-      <h2 className="testim-header">Testimonials</h2>
+      <section className="about-section">
+      <About />
       <Testimonials />
-      </section>
-      <section><About /></section>
-      <section><PriceCard /></section>
+     </section>
+      <section><FreeTrial /></section>
       <section><Footer /></section>
     </div>
   );

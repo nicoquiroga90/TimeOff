@@ -5,8 +5,7 @@
   margin-top: 3%;
 }
 .carousel .slide {
-  background: #fff;
-  color: black;
+  background: var(--color-backgroundlight);
   height: 100%;
 }
 
@@ -22,17 +21,14 @@
 }
 
 .myCarousel {
-  background: #b5e6f9;
-  margin-top: -6%;
-  width: 23em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 6%;
-  padding-bottom: 8%;
-  padding-left: 5%;
-  padding-right: 5%;
-  border: 1px solid #b5e6f9;
-  height: 25em;
+    background: var(--color-textlight);
+    margin-top: -6%;
+    margin-left: initial;
+    padding-top: 6%;
+    padding-bottom: 16%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: 1px solid var(--color-borders);
 }
 
 .carousel .control-dots {
@@ -42,7 +38,7 @@
 }
 
 .myCarousel h3 {
-  color: #222;
+  color: grey;
   font-weight: 100;
   letter-spacing: 0.2px;
   margin-bottom: 4px;
@@ -56,22 +52,22 @@
   margin-top: 0;
   padding-top: 0;
   font-weight: 500;
-  color: #524e4e;
+  color: var(--color-text);
   font-size: 14px;
 }
 
 .myCarousel p {
   font-weight: 100;
   line-height: 29px;
-  color: rgb(0, 0, 0);
+  color: whitesmoke;
   font-size: 15px;
-  font-family: 'Poppins';
   max-height: 67px;
+  font-weight: 700;
 }
 
 .myCarousel p:before {
   content: "“";
-  color: #aaa;
+  color: var(--color-borders);
   font-size: 26px;
   font-family: monospace;
   font-weight: 100;
@@ -79,7 +75,7 @@
 
 .myCarousel p:after {
   content: "”";
-  color: #aaa;
+  color: var(--color-borders);
   font-size: 26px;
   font-family: monospace;
   font-weight: 100;
@@ -88,12 +84,12 @@
 
 .carousel .control-dots .dot {
   box-shadow: none;
-  background: #86d9fb; 
+  background: var(--color-links); 
   outline: 0;
 }
 
 .carousel.carousel-slider .control-arrow {
-  background: #86d9fb;
+  background: var(--color-text);
   height: 50px;
   position: absolute;
   top: 35%;
@@ -101,10 +97,6 @@
 }
 
 .carousel.carousel-slider .control-arrow:hover {
-  background: #37c4fb; 
+  background: var(--color-links); 
   cursor: pointer;
-}
-
-.App {
-  text-align: center;
 }

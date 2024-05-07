@@ -1,5 +1,5 @@
 .footer {
-  background-color: #b5e6f9;
+  background-color: var(--color-background);
 }
 
 .footer-section {
@@ -8,14 +8,7 @@
   align-items: center;
   padding: 0;
   margin: 0;
-}
-
-.logo-col {
-  padding: 0 4em;
-}
-
-.logo-col .logo {
-  height: 2em;
+  color: var(--color-text);
 }
 
 .services-col, .contact-col {
@@ -33,28 +26,26 @@
   margin-top: 0;
   margin-bottom: 20px;
   text-align: left;
-  font-family: 'Poppins';
 }
 
 .social-col h3 {
+  display: flex;
   padding: 0;
   margin-top: 30px;
   margin-bottom: 0;
   text-align: left;
-  font-family: 'Poppins';
 }
 
 .services-col ul, .contact-col ul, .social-col ul {
   list-style: none;
   margin: 0;
   text-align: left;
-  color: #000000; 
+  color: var(--color-links); 
   padding: 0;
 }
 
 .services-col ul li, .contact-col ul li, .social-col ul li {
   margin: 8px 0;
-  font-family: 'Poppins';
 }
 
 .social-icons {
@@ -63,19 +54,17 @@
 }
 
 .separator {
-  border-top: 1px solid #636262;
+  border-top: 0.1px solid whitesmoke;
   margin: 0;
 }
 
 .copyright {
   text-align: left;
-  font-family: 'Poppins';
 }
 
 .terms {
   flex: 2;
   text-align: right;
-  font-family: 'Poppins';
 }
 
 .dark .footer {

@@ -1,58 +1,72 @@
 .main-header {
-  margin-top: 4em;
-  margin-left: 1em;
-  margin-right: 1em;
-  font-style: italic;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 2em;
-  font-weight: 800;
+  color: var(--color-textlight);
+  background-color: var(--color-borders);
+  width: fit-content;
+  padding: 1% 1em;
+  border-radius: 15px;
+  border: 3px solid whitesmoke;
 }
-
 .main-subheader {
-  margin: 1em;
-  font-weight: 200;
-  font-family:'Poppins';
+  color: whitesmoke;
+  text-align: left;
+  background-color: var(--color-borders);
+  padding: 1.2em;
+  border-radius: 15px;
+  width: 70%;
+  font-weight: 400;
+  border: 5px solid;
 }
 
-.main-section{
+.main-section {
   display: flex;
+  background-color: var(--color-backgroundlight);
+  padding: 2em;
 }
 
-.main-image-container{
-  margin: 5em;
+.main-image-container {
+  margin: auto;
+}
+
+.img-main {
+  height: 18em;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.img-main:hover {
+  transform: scale(1.05);
+  z-index: 1;
 }
 
 #teamCodeInput {
   margin: 1em;
   border-radius: 15px;
-  border: 2px solid #EF8038;
+  border: 2px solid var(--color-borders);
   text-align: center;
-  height: 2em;
-  width: 10em;
+  height: 2.2em;
   outline: none;
+  font-size: 1em;
 }
 
 #teamCodeInput::placeholder {
   text-align: center;
-  color: gray;
+  color: var(--color-borders);
 }
 
 #teamCodeInput:focus::placeholder {
-  color: transparent; 
+  color: transparent;
 }
 
 .submitTeam-container {
   display: flex;
-  flex-direction: column;
-  width: 90%;
-  margin: 2em;
+  flex-wrap: wrap;
   align-items: center;
-  font-family: 'Poppins';
 }
 
 .submitTeam-container label {
-  font-size: 20px;
-  color: #000000;
+  font-size: 1.2em;
+  color: whitesmoke;
   font-weight: 800;
 }
 
@@ -61,39 +75,49 @@
 }
 
 .button-submit {
-  height: 2em;
-  width: 10em;
-  background-color: #EF8038;
-  color: white;
+  width: 17em;
+  size: 2em;
+  font-size: 1em;
+  background-color: var(--color-buttons);
+  color: var(--color-text);
   border-radius: 15px;
-  border: none;
+  border: 1px solid var(--color-borders);
   text-decoration: none;
-  font-weight: 600;
   cursor: pointer;
+  padding: 0.5em;
+  font-weight: bolder;
 }
 
-.testimonials-container{
-    margin: 3em 0em;
-}
-
-.home-container {
-  background: #ffffff;
-  transition: 0.5s;
+.button-submit:hover {
+  width: 17em;
+  size: 2em;
+  font-size: 1em;
+  background-color: var(--color-text);
+  color: var(--color-buttons);
+  border-radius: 15px;
+  border: 1px solid var(--color-borders);
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5em;
+  font-weight: bolder;
 }
 
 .testim-header {
-  margin: 1em;
-  font-style: italic;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 2em;
-  font-weight: 800;
+  color: antiquewhite;
+  align-items: center;
+}
+
+.home-container.light {
+  width: fit-content;
 }
 
 .home-container.dark {
   background: #000000;
+  width: fit-content;
 }
 
-.dark .main-header, .dark .testim-header {
+.dark .main-header,
+.dark .testim-header {
   color: #ffffff;
 }
 
