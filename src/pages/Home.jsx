@@ -40,10 +40,10 @@ const Home = () => {
       <Navbar theme={theme} setTheme={setTheme} />
       <section className="main-section">
         <div className="headers-container">
-          <h2 className="main-header">TimeOff</h2>
+          <h2 className="main-header">TimeOFF</h2>
           <h3 className="main-subheader">
-            TimeOff is a web application designed to simplify the process of
-            managing vacations and time off for teams within a company. It
+            TimeOFF is a web application designed to simplify the process of
+            managing vacations and time off for teams within a company. <br /><br />It
             provides a user-friendly interface for creating teams, managing team
             members, and tracking their time off.
           </h3>

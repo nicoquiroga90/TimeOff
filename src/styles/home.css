@@ -1,9 +1,6 @@
 .main-header {
-  margin-top: 4em;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin: 3em 0em 1em 0.6em;
   font-size: 2em;
-  font-weight: bolder;
   color: var(--color-text);
   background-color: var(--color-borders);
   width: fit-content;
@@ -11,14 +8,14 @@
  border-radius: 15px;
 }
 .main-subheader {
-  color: var(--color-text);
+  color: whitesmoke;
   text-align: left;
   background-color: var(--color-borders);
   padding: 1.2em;
-  font-size: 1.3em;
   margin: 0em 0em 0em 1em;
   border-radius: 15px;
   width: 14em;
+  font-weight: 400;
 }
 
 .main-section {
@@ -50,16 +47,10 @@
   color: transparent;
 }
 
-.submitTeam-container {
-  display: flex;
-  flex-direction: column;
-  margin: 2em;
-  align-items: center;
-}
 
 .submitTeam-container label {
-  font-size: 20px;
-  color: var(--color-text);
+  font-size: 1.2em;
+  color: whitesmoke;
   font-weight: 800;
 }
 
@@ -68,33 +59,23 @@
 }
 
 .button-submit {
-  height: 2em;
-  width: 10em;
+ size: 2em;
+ font-size: 1em;
   background-color: var(--color-buttons);
-  color: white;
+  color: var(--color-text);
   border-radius: 15px;
-  border: none;
+  border: 1px solid var(--color-borders);
   text-decoration: none;
-  font-weight: 600;
   cursor: pointer;
+  -webkit-text-stroke: 1.5px var(--color-links);
+ 
 }
 
 .testimonials-container {
   margin: 3em 0em;
 }
 
-.home-container {
-  background: #ffffff;
-  transition: 0.5s;
-}
 
-.testim-header {
-  margin: 1em;
-  font-style: italic;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 2em;
-  font-weight: 800;
-}
 
 .home-container.dark {
   background: #000000;
