@@ -112,7 +112,7 @@ function MyCalendar() {
         <div>
           <h3>{selectedEvent.title}</h3>
           <p>{selectedEvent.description}</p>
-          <button onClick={handleDeleteEvent}>Delete Event</button>
+          <button className="delete-button" onClick={handleDeleteEvent}>Delete Event</button>
           {showDeleteConfirmation && (
             <div className="delete-confirmation">
               <p>Are you sure you want to delete this event?</p>

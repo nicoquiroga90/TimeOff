@@ -55,11 +55,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="testimonials-container">
-      <h2 className="testim-header">Testimonials</h2>
+      <section className="about-section">
+      <About />
       <Testimonials />
-      </section>
-      <section><About /></section>
+     </section>
       <section><PriceCard /></section>
       <section><Footer /></section>
     </div>

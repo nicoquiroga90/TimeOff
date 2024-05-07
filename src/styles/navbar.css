@@ -14,7 +14,7 @@
 
 .navbar-center {
   color: var(--color-links);
-  margin: 4em;
+  margin: 0 14em;
 }
 
 .navbar-center a {

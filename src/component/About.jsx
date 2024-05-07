@@ -19,9 +19,9 @@ function About() {
         manage all these aspects in a centralized way, making coordination and
         planning for your teams easier. Whether you work in a small startup or a
         large corporation, TimeOff is designed to adapt to your team's needs and
-        help you optimize time off management. <br /><br /> <strong>Join thousands of companies that
+        help you optimize time off management. <br /><br /><br /> <strong>Join thousands of companies that
         rely on TimeOff to simplify their vacation and time off management
-        processes. </strong>
+        processes.</strong>
       </p>
     </div>
   );
