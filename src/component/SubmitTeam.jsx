@@ -17,7 +17,7 @@ const SubmitTeam = () => {
     try {
       setIsLoading(true);
 
-      const response = await fetch("http://localhost:4051/api/teams" || apiPath("/teams"));
+      const response = await fetch(apiPath("/teams"));
       if (!response.ok) {
         throw new Error("Failed to fetch teams");
       }
