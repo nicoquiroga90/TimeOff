@@ -1,13 +1,12 @@
+import "../styles/home.css";
+import { apiPath } from "../api";
 import { useState, useEffect } from "react";
 import SubmitTeam from "../component/SubmitTeam";
-import { apiPath } from "../api";
 import Navbar from "./Navbar";
-import "../styles/home.css";
 import Testimonials from "../component/Testimonials";
 import About from "../component/About";
 import Footer from "./Footer";
 import FreeTrial from "../component/FreeTrial";
-import Loading from "../component/Loading";
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);

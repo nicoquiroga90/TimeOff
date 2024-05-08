@@ -1,13 +1,13 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiPath } from "../api";
 import "../styles/home.css";
-import Loading from "./Loading"; 
+import Loading from "./Loading";
 
 const SubmitTeam = () => {
   const navigate = useNavigate();
   const [inputCode, setInputCode] = useState("");
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (event) => {
     setInputCode(event.target.value);
@@ -15,7 +15,7 @@ const SubmitTeam = () => {
 
   const handleSubmit = async () => {
     try {
-      setIsLoading(true);
+      setIsLoading(true); 
 
       const response = await fetch(apiPath("/teams"));
       if (!response.ok) {
@@ -33,8 +33,8 @@ const SubmitTeam = () => {
       console.error("Error fetching teams:", error);
       window.alert("Failed to fetch teams");
     } finally {
-      setIsLoading(false); 
-      }
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -48,13 +48,11 @@ const SubmitTeam = () => {
         placeholder="Enter Team Code"
       />
 
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <button className="button-submit" onClick={handleSubmit}>
-          Submit
-        </button>
-      )}
+      <Loading open={isLoading} />
+
+      <button className="button-submit" onClick={handleSubmit}>
+        Submit
+      </button>
     </div>
   );
 };
