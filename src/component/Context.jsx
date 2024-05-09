@@ -25,7 +25,7 @@ const TeamDataProvider = ({ children }) => {
       const teamsData = await teamsResponse.json();
       const membersData = await membersResponse.json();
       const timeOffData = await timeOffResponse.json();
-
+      
       setTeams(teamsData);
       setMembers(membersData);
       setTimeOff(timeOffData);

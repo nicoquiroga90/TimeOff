@@ -3,14 +3,14 @@ import CreateMember from "../component/CreateMember";
 import CreateTimeoff from "../component/CreateTimeoff";
 import DeleteTeam from "../component/DeleteMember";
 import TeamMembers from "../component/TeamDetails";
-import MembersList from "../component/MembersList";
+import WelcomeTeam from "../component/WelcomeTeam";
 import "../styles/team.css";
 
 function Team() {
   return (
     <>
       <section className="welcome-team">
-        <MembersList />
+        <WelcomeTeam />
       </section>
       <div className="container-section">
         <section className="left-section">

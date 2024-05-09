@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import { apiPath } from '../api';
 import MemberDetails from "../component/MemberDetails";
 
