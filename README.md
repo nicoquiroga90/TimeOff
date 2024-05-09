@@ -1,6 +1,11 @@
-# TimeOff_App
+# TimeOFF App
 
-TimeOff_App is a web application designed to simplify the process of managing vacations and time off for teams within a company. It provides a user-friendly interface for creating teams, managing team members, and tracking their time off.
+TimeOff originated as the final project during my participation in HackYourFuture, where we were tasked with implementing a set of functionalities for the application as part of a team project. Inspired by the initiative of HackYourFuture DK, TimeOff_App is a web-based solution aimed at streamlining the management of vacations and time off for teams within organizations. 
+
+Following the completion and presentation of the initial version, I took the initiative to fork the original project. 
+
+# Goal
+My goal was to refactor the application, introducing a fresh design and enhancing its functionality to serve as a solid foundation for a more robust and stylized application.
 
 ## Development Status
 
@@ -35,15 +40,35 @@ Upon accessing the dashboard using the team code, the following functions are av
 
 To start using the app:
 
-1. Run the backend and frontend separately in different terminals using:
+1. Install the dependencies with:
 
-npm start-server
-npm start-frontend
+npm install 
+
+2. Run the backend and frontend  using:
+
+npm run start
 
 
 ## Deployment
 
-A deployed version is available at the following link: [TimeOff_App Deployment](https://time-off-ykex.vercel.app)
+A deployed version is available at the following link: [TimeOFF App Deployment](https://time-off-nu.vercel.app/)
+
+
+## Original version:
+
+[Original Repo](https://github.com/HackYourFuture-CPH/team26-TimeOff_App)
+
+
+![Forked version](oldVersion.png)
+
+
+![Forked dashboard version](oldDashboard.png)
+
+## New version:
+
+![New version](newVersion.png)
+
+
 
 ## Contributing
 
