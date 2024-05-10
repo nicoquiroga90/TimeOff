@@ -1,26 +1,27 @@
-.Team-Member-container {
-  padding: 0;
-  margin: 0;
+.team-member-container {
+    background-color: var(--color-backgroundlight);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.Team-Member-container h2{
-  font-family: 'Poppins';
-  margin: 0;
-  padding: 4px 0;
+.team-title {
+  color: var(--color-textlight);
+  padding: 0 0.6em;
 }
 
-.Team-Member-container ul{
-  font-family: 'Poppins';
-  margin: 0;
+.team-member {
   list-style-type: none;
-  padding: 0;
-}
+    font-weight: 600;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    border-radius: 15px;
+    text-align: center;
+    margin: 0.5em;
+    }
 
-.Team-Member-container ul li{
-  text-decoration: none;
-  padding: 4px;
-}
-
-.Team-Member-container ul li::marker{
-  text-decoration: none;
+.member-action-conteiner {
+  display: flex;
+  padding: 0 0 0 3em;
+  flex-flow: column;
 }

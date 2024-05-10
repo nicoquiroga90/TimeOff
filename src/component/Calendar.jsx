@@ -84,35 +84,37 @@ function MyCalendar() {
     setShowDeleteConfirmation(false);
   };
 
+  
+
   return (
     <div className="calender-container">
       <Calendar
+    
+        popup={false}
         localizer={localizer}
         events={events}
         onSelectEvent={handleEventClick}
+         views={['month', 'week']}
         eventPropGetter={(event, start, end, isSelected) => {
           const style = {
-            borderRadius: "0px",
+            borderRadius: "10px",
             border: "none",
-            fontSize: "10px",
-            height: "20px",
-            overflow: "hidden",
-            padding: "2px",
-            margin: "2px",
             backgroundColor: event.backgroundColor,
           };
           return { style };
         }}
         style={{
-          height: 500,
-          width: 500,
+          height: "35em",
+          width: "100%",
         }}
       />
       {selectedEvent && (
         <div>
           <h3>{selectedEvent.title}</h3>
           <p>{selectedEvent.description}</p>
-          <button className="delete-button" onClick={handleDeleteEvent}>Delete Event</button>
+          <button className="delete-button" onClick={handleDeleteEvent}>
+            Delete Event
+          </button>
           {showDeleteConfirmation && (
             <div className="delete-confirmation">
               <p>Are you sure you want to delete this event?</p>

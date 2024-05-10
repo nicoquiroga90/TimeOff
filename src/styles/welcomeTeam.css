@@ -1,0 +1,22 @@
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-background);
+  padding: 0em 2em;
+}
+
+
+.titleContainer h1{
+  font-size: 1.6em;
+    color:  var(--color-textlight);
+}
+
+.titleContainer span{
+  color:  var(--color-text);
+  font-size: 1.2em;
+}
+
+.logo{
+  height: 8em;
+}
