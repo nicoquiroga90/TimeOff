@@ -69,6 +69,8 @@ A deployed version is available at the following link: [TimeOFF App Deployment](
 ![New version](newVersion.png)
 
 
+![New Dashboard](newDashboard.png)
+
 
 ## Contributing
 
