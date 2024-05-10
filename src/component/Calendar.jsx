@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { TeamDataContext } from "../component/Context";
 import { apiPath } from "../api";
+import DeleteTimeOff from "../component/DeleteTimeOff";
 import "../styles/calender.css";
 import "../styles/deleteTimeoff.css";
 
@@ -12,7 +13,6 @@ function MyCalendar() {
   const { teams, members, refreshTeamData } = useContext(TeamDataContext);
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   useEffect(() => {
     const teamCode = window.location.pathname.split("/").pop();
@@ -59,42 +59,20 @@ function MyCalendar() {
     setSelectedEvent(event);
   };
 
-  const handleDeleteEvent = async () => {
-    setShowDeleteConfirmation(true);
-  };
 
-  const confirmDelete = async () => {
-    try {
-      await fetch(apiPath(`/timeoff`), {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: selectedEvent.id }),
-      });
-      setEvents(events.filter((event) => event.id !== selectedEvent.id));
-      setSelectedEvent(null);
-      setShowDeleteConfirmation(false);
-    } catch (error) {
-      console.error("Error deleting event:", error);
-    }
+  const onDeleteConfirmation = async () => {
+    setEvents(events.filter((event) => event.id !== selectedEvent.id));
+    setSelectedEvent(null);
   };
-
-  const cancelDelete = () => {
-    setShowDeleteConfirmation(false);
-  };
-
-  
 
   return (
     <div className="calender-container">
       <Calendar
-    
         popup={false}
         localizer={localizer}
         events={events}
         onSelectEvent={handleEventClick}
-         views={['month', 'week']}
+        views={['month', 'week']}
         eventPropGetter={(event, start, end, isSelected) => {
           const style = {
             borderRadius: "10px",
@@ -110,18 +88,7 @@ function MyCalendar() {
       />
       {selectedEvent && (
         <div>
-          <h3>{selectedEvent.title}</h3>
-          <p>{selectedEvent.description}</p>
-          <button className="delete-button" onClick={handleDeleteEvent}>
-            Delete Event
-          </button>
-          {showDeleteConfirmation && (
-            <div className="delete-confirmation">
-              <p>Are you sure you want to delete this event?</p>
-              <button onClick={confirmDelete}>Yes</button>
-              <button onClick={cancelDelete}>No</button>
-            </div>
-          )}
+          <DeleteTimeOff eventId={selectedEvent.id} onDelete={onDeleteConfirmation} />
         </div>
       )}
     </div>
