@@ -1,26 +1,17 @@
-.Team-Member-container {
-  padding: 0;
-  margin: 0;
+.team-member-container {
+  background-color: var(--color-backgroundlight);
+  padding: 1.2em;
+  display: flex;
+  justify-content: space-between;
 }
 
-.Team-Member-container h2{
-  font-family: 'Poppins';
-  margin: 0;
-  padding: 4px 0;
+.team-title {
+  color: var(--color-textlight);
+  padding: 0 0.6em;
 }
 
-.Team-Member-container ul{
-  font-family: 'Poppins';
-  margin: 0;
+.team-member {
   list-style-type: none;
-  padding: 0;
-}
-
-.Team-Member-container ul li{
-  text-decoration: none;
-  padding: 4px;
-}
-
-.Team-Member-container ul li::marker{
-  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-text);
 }

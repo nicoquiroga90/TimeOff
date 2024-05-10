@@ -1,5 +1,4 @@
 import MyCalendar from "../component/Calendar";
-import CreateMember from "../component/CreateMember";
 import CreateTimeoff from "../component/CreateTimeoff";
 import DeleteTeam from "../component/DeleteMember";
 import TeamMembers from "../component/TeamDetails";
@@ -23,7 +22,7 @@ function Team() {
         </section>
         <section className="right-section">
           <section className="CreateMember">
-            <CreateMember />
+            
             <DeleteTeam />
             <CreateTimeoff />
           </section>
