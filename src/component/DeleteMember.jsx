@@ -100,10 +100,9 @@ const DeleteMember = () => {
         variant="contained"
         onClick={handleOpenSelectDialog}
         sx={{
-          color: "#f5f5f5",
-          bgcolor: "#fc746a",
           "&:hover": {
             backgroundColor: "#f44336",
+            color: "#f5f5f5",
           },
         }}
       >
@@ -197,10 +196,9 @@ const DeleteMember = () => {
           <Button
             onClick={confirmDeleteMember}
             sx={{
-              color: "#f5f5f5",
-              bgcolor: "#f44336",
               "&:hover": {
                 backgroundColor: "#d32f2f",
+                 color: "#f5f5f5",
               },
             }}
           >
