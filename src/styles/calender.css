@@ -1,5 +1,4 @@
 .calender-container {
-  width: 45em;
   background-attachment: var(--color-background);
 }
 
@@ -9,12 +8,10 @@
   display: flex;
   flex-direction: column;
   flex: 1 0;
-  /* width: 100%; */
+  max-width: 29em;
   user-select: none;
   -webkit-user-select: none;
-  /* height: 100%; */
   background-color: white;
-  /* padding: 1em; */
   border-radius: 15px;
 }
 
@@ -51,13 +48,13 @@ button.rbc-button-link[type="button"] {
   padding: 0 1em;
 }
 
-.rbc-time-view{
+.rbc-time-view {
   background-color: white;
-      width: 100%;
-    border: 3px solid var(--color-borders);
-      border-radius: 15px;
+  width: 100%;
+  border: 3px solid var(--color-borders);
+  border-radius: 15px;
 }
 
-.rbc-overflowing{
-      height: 100%;
+.rbc-overflowing {
+  height: 100%;
 }
