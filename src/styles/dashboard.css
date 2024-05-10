@@ -4,7 +4,6 @@
     background-color: var(--color-backgroundlight);
     padding: 2em;
     height: 48.2em;
-    width: 100%;
     flex-wrap: wrap;
 }
 
