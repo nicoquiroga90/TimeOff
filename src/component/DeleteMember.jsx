@@ -198,7 +198,7 @@ const DeleteMember = () => {
             sx={{
               "&:hover": {
                 backgroundColor: "#d32f2f",
-                 color: "#f5f5f5",
+                color: "#f5f5f5",
               },
             }}
           >

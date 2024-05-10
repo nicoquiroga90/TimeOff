@@ -2,6 +2,13 @@ import { useState, useContext } from "react";
 import { apiPath } from "../api";
 import { TeamDataContext } from "../component/Context";
 import "../styles/createTimeoff.css";
+import {
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from "@mui/material";
 
 function CreateTimeoff() {
   const { members, teams } = useContext(TeamDataContext);
@@ -9,7 +16,7 @@ function CreateTimeoff() {
   const [endDate, setEndDate] = useState("");
   const [description, setDescription] = useState("");
   const [selectedMember, setSelectedMember] = useState("");
-  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
 
   const currentTeam = teams.find(
     (team) => team.team_code === window.location.pathname.split("/").pop()
@@ -71,7 +78,7 @@ function CreateTimeoff() {
 
       if (response.ok) {
         alert("Time off booked successfully!");
-        setIsFormVisible(false);
+        setOpenDialog(false);
       } else {
         const data = await response.json();
         alert(data.error || "Failed to book time off. Please try again.");
@@ -84,53 +91,95 @@ function CreateTimeoff() {
 
   return (
     <div className="createTimeOff-container">
-      <button className="book-timeoff" onClick={() => setIsFormVisible(true)}>
+      <Button
+        className="book-timeoff"
+        onClick={() => setOpenDialog(true)}
+        style={{
+          backgroundColor: "#47a67e",
+          color: "#f5f5f5",
+        }}
+        sx={{
+          "&:hover": {
+            color: "#83c5ab  !important",
+            backgroundColor: "#f5f5f5  !important",
+          },
+        }}
+      >
         Book Time Off
-      </button>
-      {isFormVisible && (
-        <form className="createTimeoff-form" onSubmit={handleSubmit}>
-          <div>
-            <label>Member:</label>
-            <select
-              className="createTimeForm-select"
-              value={selectedMember}
-              onChange={handleMemberChange}
-            >
-              <option value="">Select Member</option>
-              {currentTeamMembers?.map((member) => (
-                <option key={member.id} value={member.id}>
-                  {member.first_name} {member.last_name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label>Start Date:</label>
-            <input
-              type="date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>End Date:</label>
-            <input
-              type="date"
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Description:</label>
-            <input
-              type="text"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      )}
+      </Button>
+
+      <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
+        <DialogTitle>Create Time Off</DialogTitle>
+        <DialogContent>
+          <form className="createTimeoff-form" onSubmit={handleSubmit}>
+            <div>
+              <label>Member:</label>
+              <select
+                className="createTimeForm-select"
+                value={selectedMember}
+                onChange={handleMemberChange}
+              >
+                <option value="">Select Member</option>
+                {currentTeamMembers?.map((member) => (
+                  <option key={member.id} value={member.id}>
+                    {member.first_name} {member.last_name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Start Date:</label>
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+              />
+            </div>
+            <div>
+              <label>End Date:</label>
+              <input
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+              />
+            </div>
+            <div>
+              <label>Description:</label>
+              <input
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+            <div className="dialog-buttons">
+              <Button
+                onClick={() => setOpenDialog(false)}
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#ff480069",
+                    color: "#f5f5f5",
+                  },
+                }}
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                sx={{
+                  color: "#f5f5f5",
+                  bgcolor: "#83c5ab",
+                  "&:hover": {
+                    backgroundColor: "#47a67e",
+                    color: "#f5f5f5",
+                  },
+                }}
+              >
+                Submit
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
