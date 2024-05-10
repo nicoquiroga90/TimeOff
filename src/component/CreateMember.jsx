@@ -180,6 +180,7 @@ function CreateMember() {
             className="button-cancel"
             onClick={handleCloseDialog}
             sx={{
+              fontFamily: "Fira Sans, sans-serif",
               color: "#47a67e",
               "&:hover": {
                 backgroundColor: "#ff480069",
@@ -193,6 +194,7 @@ function CreateMember() {
             className="button-create"
             onClick={handleSubmit}
             sx={{
+              fontFamily: "Fira Sans, sans-serif",
               color: "#f5f5f5",
               bgcolor: "#83c5ab",
               "&:hover": {

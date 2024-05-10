@@ -94,8 +94,8 @@ function MyCalendar() {
           const style = {
             borderRadius: "0px",
             border: "none",
-            fontSize: "10px",
-            height: "20px",
+            fontSize: "1em",
+            height: "1.5em",
             overflow: "hidden",
             padding: "2px",
             margin: "2px",
@@ -104,8 +104,8 @@ function MyCalendar() {
           return { style };
         }}
         style={{
-          height: 500,
-          width: 500,
+          height: "35em",
+          width: "50em",
         }}
       />
       {selectedEvent && (

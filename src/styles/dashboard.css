@@ -1,0 +1,7 @@
+.container-section {
+  display: flex;
+  background-color: var(--color-backgroundlight);
+padding: 1em;
+
+}
+

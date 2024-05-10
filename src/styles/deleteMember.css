@@ -1,40 +1,9 @@
-.deleteMember-container {
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
+.deleteMember-select{
+  font-family: "Fira Sans", sans-serif;
+  color:  var(--color-border);
 }
 
-.deleteMember-container label {
-  flex: 0 0 auto; 
-  margin-right: 10px;
-  font-family: 'Poppins';
-  font-size: 16px;
-}
-
-.deleteMember-container .deleteMember-select {
-  flex: 1; 
-  margin-right: 10px; 
-  width: 12em;
-  height: 32px;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  font-size: 12px;
-  font-family: 'Poppins';
-  padding: 2px;
-  padding-left: 1em;
-}
-
-.deleteMember-container button {
-  width: 10em;
-  background-color: #e10808;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: 'Poppins';
-  padding: 6px;
-}
-
-.deleteMember-container button:hover {
-  background-color: #940b0b;
+.delete-options{
+  font-family: "Fira Sans", sans-serif;
+  color:  var(--color-border);
 }

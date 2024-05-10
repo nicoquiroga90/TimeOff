@@ -1,4 +1,3 @@
 .calender-container {
-  display: flex;
-  justify-content: center;
+background-attachment: var(--color-background);
 }

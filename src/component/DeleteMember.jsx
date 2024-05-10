@@ -1,7 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import { apiPath } from "../api";
 import { TeamDataContext } from "../component/Context";
-import { useParams } from "react-router-dom";
+import {
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from "@mui/material";
 import "../styles/deleteMember.css";
 
 const DeleteMember = () => {
@@ -10,6 +17,8 @@ const DeleteMember = () => {
   const [filteredMembers, setFilteredMembers] = useState([]);
   const { code } = useParams();
   const [teamId, setTeamId] = useState(null);
+  const [openSelectDialog, setOpenSelectDialog] = useState(false);
+  const [openConfirmDialog, setOpenConfirmDialog] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,39 +41,51 @@ const DeleteMember = () => {
     fetchData();
   }, [code, teams, members]);
 
+  const handleOpenSelectDialog = () => {
+    setOpenSelectDialog(true);
+  };
+
+  const handleCloseSelectDialog = () => {
+    setOpenSelectDialog(false);
+  };
+
+  const handleOpenConfirmDialog = () => {
+    setOpenConfirmDialog(true);
+  };
+
+  const handleCloseConfirmDialog = () => {
+    setOpenConfirmDialog(false);
+  };
+
   const handleDeleteMember = async () => {
-    if (!selectedMember) {
-      alert("Please select a member");
-      return;
-    }
+    handleCloseSelectDialog();
+    handleOpenConfirmDialog();
+  };
 
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this member?"
-    );
-    if (confirmDelete) {
-      try {
-        const response = await fetch(apiPath("/members"), {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ id: selectedMember }),
-        });
+  const confirmDeleteMember = async () => {
+    try {
+      const response = await fetch(apiPath("/members"), {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: selectedMember }),
+      });
 
-        if (response.ok) {
-          const updatedMembers = filteredMembers.filter(
-            (member) => member.id !== Number(selectedMember)
-          );
-          setFilteredMembers(updatedMembers);
-          alert("Member deleted successfully");
-          setMembers(updatedMembers);
-        } else {
-          alert("Failed to delete member. Please try again.");
-        }
-      } catch (error) {
-        console.error("Error deleting member:", error);
-        alert("An unexpected error occurred. Please try again later.");
+      if (response.ok) {
+        const updatedMembers = filteredMembers.filter(
+          (member) => member.id !== Number(selectedMember)
+        );
+        setFilteredMembers(updatedMembers);
+        alert("Member deleted successfully");
+        setMembers(updatedMembers);
+        handleCloseConfirmDialog();
+      } else {
+        alert("Failed to delete member. Please try again.");
       }
+    } catch (error) {
+      console.error("Error deleting member:", error);
+      alert("An unexpected error occurred. Please try again later.");
     }
   };
 
@@ -74,22 +95,119 @@ const DeleteMember = () => {
 
   return (
     <div className="deleteMember-container">
-      <label htmlFor="memberSelect">Select Member:</label>
-      <select
-        className="deleteMember-select"
-        id="memberSelect"
-        value={selectedMember}
-        onChange={handleMemberChange}
+      <Button
+        className="button"
+        variant="contained"
+        onClick={handleOpenSelectDialog}
+        sx={{
+          color: "#f5f5f5",
+          bgcolor: "#fc746a",
+          "&:hover": {
+            backgroundColor: "#f44336",
+          },
+        }}
       >
-        <option value="">Select a member</option>
-        {filteredMembers.map((member) => (
-          <option
-            key={member.id}
-            value={member.id}
-          >{`${member.first_name} ${member.last_name}`}</option>
-        ))}
-      </select>
-      <button onClick={handleDeleteMember}>Delete Member</button>
+        Delete Member
+      </Button>
+
+      <Dialog
+        open={openSelectDialog}
+        onClose={handleCloseSelectDialog}
+        className="dialog"
+      >
+        <DialogTitle
+          sx={{ fontFamily: "Fira Sans, sans-serif", color: "#f44336" }}
+        >
+          Delete Member
+        </DialogTitle>
+        <DialogContent
+          sx={{ fontFamily: "Fira Sans, sans-serif", color: "#98908d" }}
+        >
+          <label htmlFor="memberSelect">Select Member: </label>
+          <select
+            className="deleteMember-select"
+            id="memberSelect"
+            value={selectedMember}
+            onChange={handleMemberChange}
+          >
+            <option value="">Members</option>
+            {filteredMembers.map((member) => (
+              <option key={member.id} value={member.id}>
+                {`${member.first_name} ${member.last_name}`}
+              </option>
+            ))}
+          </select>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={handleCloseSelectDialog}
+            sx={{
+              fontFamily: "Fira Sans, sans-serif",
+              color: "#f44336",
+              "&:hover": {
+                backgroundColor: "#ff480069",
+                color: "#f5f5f5",
+              },
+            }}
+          >
+            Cancel
+          </Button>
+          <Button
+            onClick={handleDeleteMember}
+            sx={{
+              color: "#f5f5f5",
+              bgcolor: "#f44336",
+              "&:hover": {
+                backgroundColor: "#d32f2f",
+              },
+            }}
+          >
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      <Dialog
+        open={openConfirmDialog}
+        onClose={handleCloseConfirmDialog}
+        className="dialog"
+      >
+        <DialogTitle
+          sx={{ fontFamily: "Fira Sans, sans-serif", color: "#f44336" }}
+        >
+          Confirm Delete
+        </DialogTitle>
+        <DialogContent>
+          Are you sure you want to delete this member?
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={handleCloseConfirmDialog}
+            sx={{
+              fontFamily: "Fira Sans, sans-serif",
+              color: "#f44336",
+              "&:hover": {
+                backgroundColor: "#ff480069",
+                color: "#f5f5f5",
+              },
+            }}
+          >
+            Cancel
+          </Button>
+          <Button
+            onClick={confirmDeleteMember}
+            sx={{
+              color: "#f5f5f5",
+              bgcolor: "#f44336",
+              "&:hover": {
+                backgroundColor: "#d32f2f",
+              },
+            }}
+          >
+            Confirm
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
