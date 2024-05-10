@@ -1,9 +1,11 @@
 .dashboard-main {
-  display: flex;
-  justify-content: space-around;
-  background-color: var(--color-backgroundlight);
-  padding: 2em;
-  height: 48.2em;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-backgroundlight);
+    padding: 2em;
+    height: 48.2em;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .left-section {

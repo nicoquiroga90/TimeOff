@@ -84,22 +84,21 @@ function MyCalendar() {
     setShowDeleteConfirmation(false);
   };
 
+  
+
   return (
     <div className="calender-container">
       <Calendar
-        views={["month"]}
+    
+        popup={false}
         localizer={localizer}
         events={events}
         onSelectEvent={handleEventClick}
+         views={['month', 'week']}
         eventPropGetter={(event, start, end, isSelected) => {
           const style = {
-            borderRadius: "0px",
+            borderRadius: "10px",
             border: "none",
-            fontSize: "1em",
-            height: "1.5em",
-            overflow: "hidden",
-            padding: "2px",
-            margin: "2px",
             backgroundColor: event.backgroundColor,
           };
           return { style };

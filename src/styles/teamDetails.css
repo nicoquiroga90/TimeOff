@@ -1,8 +1,9 @@
 .team-member-container {
-  background-color: var(--color-backgroundlight);
-  padding: 1.2em;
-  display: flex;
-  justify-content: space-between;
+    background-color: var(--color-backgroundlight);
+    padding: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .team-title {
