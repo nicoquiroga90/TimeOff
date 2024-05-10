@@ -15,3 +15,10 @@
   font-weight: 600;
   color: var(--color-text);
 }
+
+.member-action-conteiner {
+  gap: 2em;
+  display: flex;
+  padding: 0 0 0 3em;
+  flex-flow: column;
+}

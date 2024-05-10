@@ -105,7 +105,7 @@ function MyCalendar() {
         }}
         style={{
           height: "35em",
-          width: "50em",
+          width: "100%",
         }}
       />
       {selectedEvent && (

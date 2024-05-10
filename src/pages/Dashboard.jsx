@@ -6,22 +6,20 @@ import "../styles/dashboard.css";
 
 function Dashboard() {
   return (
-    <div className="dashboard-conteiner">
-      <section className="welcome-team">
+<div className="dashboard-conteiner">
+
         <WelcomeTeam />
-      </section>
-      <div className="container-section">
-        <section className="left-section">
-          <section className="MyCalendar">
+
+<div className="dashboard-main">
+<div className="left-section">
             <MyCalendar />
-          </section>
           <CreateTimeoff />
-        </section>
-        <section className="right-section">
+</div>
+<div className="right-section">
           <TeamMembers />
-        </section>
-      </div>
-    </div>
+</div>
+</div>
+</div>
   );
 }
 

@@ -1,7 +1,12 @@
-.container-section {
+.dashboard-main {
   display: flex;
+  justify-content: space-around;
   background-color: var(--color-backgroundlight);
-padding: 1em;
-
+  padding: 2em;
+  height: 48.2em;
 }
 
+.left-section {
+  display: flex;
+  flex-direction: column;
+}
