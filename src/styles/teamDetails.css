@@ -12,12 +12,15 @@
 
 .team-member {
   list-style-type: none;
-  font-weight: 600;
-  color: var(--color-text);
-}
+    font-weight: 600;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    border-radius: 15px;
+    text-align: center;
+    margin: 0.5em;
+    }
 
 .member-action-conteiner {
-  gap: 2em;
   display: flex;
   padding: 0 0 0 3em;
   flex-flow: column;

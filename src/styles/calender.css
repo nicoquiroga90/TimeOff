@@ -1,3 +1,50 @@
 .calender-container {
-background-attachment: var(--color-background);
+  background-attachment: var(--color-background);
+}
+
+.rbc-month-view {
+  position: relative;
+  border: 5px solid var(--color-borders);
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  height: 100%;
+  background-color: white;
+  padding: 1em;
+  border-radius: 15px;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  flex-grow: 1;
+  padding: 0.5em 1em;
+  font-family: "Fira Sans", sans-serif;
+  text-align: center;
+  color: var(--color-text);
+  font-weight: 600;
+  background-color: white;
+  border: 3px solid var(--color-borders);
+  margin: 1em;
+  border-radius: 10px;
+}
+
+button[type="button"]{
+    flex-grow: 1;
+  padding: 0.5em 1em;
+  font-family: "Fira Sans", sans-serif;
+  text-align: center;
+  color: var(--color-text);
+  font-weight: 600;
+  background-color: white;
+  border: 3px solid var(--color-borders);
+  margin: 1em;
+  border-radius: 10px;
+}
+
+button.rbc-button-link[type="button"]{
+    font-family: "Fira Sans", sans-serif;
+    border: none;
+    font-size: 1em;
 }
