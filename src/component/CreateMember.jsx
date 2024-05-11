@@ -180,13 +180,12 @@ function CreateMember() {
             className="button-cancel"
             onClick={handleCloseDialog}
             sx={{
-              fontFamily: "Fira Sans, sans-serif",
-              color: "#47a67e",
-              "&:hover": {
-                backgroundColor: "#ff480069",
-                color: "#f5f5f5",
-              },
-            }}
+                  color: "#ff480069 !important",
+                  "&:hover": {
+                    backgroundColor: "#ff480069",
+                    color: "#f5f5f5 !important",
+                  },
+                }}
           >
             Cancel
           </Button>
