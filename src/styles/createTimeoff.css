@@ -27,10 +27,10 @@
 
 .dialog-buttons {
   display: flex;
-  gap: 12em;
+  gap: 2em;
+  align-items: center;
 }
 
-.book-timeoff{
-background-color: white;
-
+.book-timeoff {
+  background-color: white;
 }

@@ -6,7 +6,6 @@ import { TeamDataContext } from "../component/Context";
 import { apiPath } from "../api";
 import DeleteTimeOff from "../component/DeleteTimeOff";
 import "../styles/calender.css";
-import "../styles/deleteTimeoff.css";
 
 function MyCalendar() {
   const localizer = dayjsLocalizer(dayjs);
@@ -42,6 +41,9 @@ function MyCalendar() {
             title: member ? `${member.first_name} ${member.last_name}` : "",
             description: event.description,
             backgroundColor: member ? member.color : "#000000",
+            memberName: member
+              ? `${member.first_name} ${member.last_name}`
+              : "",
           };
         });
 
@@ -59,9 +61,12 @@ function MyCalendar() {
     setSelectedEvent(event);
   };
 
-
   const onDeleteConfirmation = async () => {
     setEvents(events.filter((event) => event.id !== selectedEvent.id));
+    setSelectedEvent(null);
+  };
+
+  const handleCloseDialog = () => {
     setSelectedEvent(null);
   };
 
@@ -72,7 +77,7 @@ function MyCalendar() {
         localizer={localizer}
         events={events}
         onSelectEvent={handleEventClick}
-        views={['month', 'week']}
+        views={["month", "week"]}
         eventPropGetter={(event, start, end, isSelected) => {
           const style = {
             borderRadius: "10px",
@@ -88,7 +93,13 @@ function MyCalendar() {
       />
       {selectedEvent && (
         <div>
-          <DeleteTimeOff eventId={selectedEvent.id} onDelete={onDeleteConfirmation} />
+          <DeleteTimeOff
+            eventId={selectedEvent.id}
+            eventDescription={selectedEvent.description}
+            memberName={selectedEvent.memberName}
+            onDelete={onDeleteConfirmation}
+            onCloseDialog={handleCloseDialog}
+          />
         </div>
       )}
     </div>
