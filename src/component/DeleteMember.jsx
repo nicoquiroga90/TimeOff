@@ -12,7 +12,7 @@ import {
 import "../styles/deleteMember.css";
 
 const DeleteMember = () => {
-  const { members, teams, setMembers } = useContext(TeamDataContext);
+  const { members, teams, setMembers, refreshTeamData } = useContext(TeamDataContext);
   const [selectedMember, setSelectedMember] = useState("");
   const [filteredMembers, setFilteredMembers] = useState([]);
   const { code } = useParams();
@@ -77,6 +77,7 @@ const DeleteMember = () => {
           (member) => member.id !== Number(selectedMember)
         );
         setFilteredMembers(updatedMembers);
+        refreshTeamData()
         alert("Member deleted successfully");
         setMembers(updatedMembers);
         handleCloseConfirmDialog();
