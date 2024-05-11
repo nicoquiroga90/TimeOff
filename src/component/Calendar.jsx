@@ -48,7 +48,7 @@ function MyCalendar() {
         });
 
         setEvents(formattedEvents);
-        refreshTeamData();
+
       } catch (error) {
         console.error("Error fetching events:", error);
       }

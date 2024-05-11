@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 
 function CreateTimeoff() {
-  const { members, teams } = useContext(TeamDataContext);
+  const { members, teams, refreshTeamData } = useContext(TeamDataContext);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [description, setDescription] = useState("");
@@ -78,6 +78,7 @@ function CreateTimeoff() {
 
       if (response.ok) {
         alert("Time off booked successfully!");
+        refreshTeamData()
         setOpenDialog(false);
       } else {
         const data = await response.json();

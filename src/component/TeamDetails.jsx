@@ -25,8 +25,7 @@ const TeamMembers = () => {
         <h2 className="team-title"> Team Members:</h2>
         {teamMembers.length === 0 ? (
           <p className="no-team-text">
-            No team members found. <br />
-            Create a new member using the button in the panel.
+            Currently no members, feel free to add new ones using the Create Member button.
           </p>
         ) : (
           <ul className="team-list">

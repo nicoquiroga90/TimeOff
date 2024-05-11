@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { apiPath } from "../api";
+import Loading from "./Loading";
 
 const TeamDataContext = createContext();
 
@@ -7,6 +8,7 @@ const TeamDataProvider = ({ children }) => {
   const [teams, setTeams] = useState([]);
   const [members, setMembers] = useState([]);
   const [timeOff, setTimeOff] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [dataIsOld, setDataIsOld] = useState(false);
 
   const refreshTeamData = () => {
@@ -15,6 +17,7 @@ const TeamDataProvider = ({ children }) => {
 
   const fetchData = async () => {
     try {
+      setLoading(true);
       const [teamsResponse, membersResponse, timeOffResponse] =
         await Promise.all([
           fetch(apiPath("/teams")),
@@ -25,18 +28,16 @@ const TeamDataProvider = ({ children }) => {
       const teamsData = await teamsResponse.json();
       const membersData = await membersResponse.json();
       const timeOffData = await timeOffResponse.json();
-      
+
       setTeams(teamsData);
       setMembers(membersData);
       setTimeOff(timeOffData);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   useEffect(() => {
     if (dataIsOld) {
@@ -45,11 +46,15 @@ const TeamDataProvider = ({ children }) => {
     }
   }, [dataIsOld]);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <TeamDataContext.Provider
       value={{ teams, members, timeOff, setMembers, refreshTeamData }}
     >
-      {children}
+      {loading ? <Loading open={true} /> : children}
     </TeamDataContext.Provider>
   );
 };
