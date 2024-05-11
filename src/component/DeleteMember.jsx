@@ -154,10 +154,12 @@ const DeleteMember = () => {
           <Button
             onClick={handleDeleteMember}
             sx={{
-              color: "#f5f5f5",
-              bgcolor: "#f44336",
+              backgroundColor: "#d32f2f !important",
+              color: "#f5f5f5 !important",
+
               "&:hover": {
-                backgroundColor: "#d32f2f",
+                backgroundColor: "#fc5858 !important",
+                color: "#f5f5f5",
               },
             }}
           >
@@ -186,7 +188,7 @@ const DeleteMember = () => {
               fontFamily: "Fira Sans, sans-serif",
               color: "#f44336",
               "&:hover": {
-                backgroundColor: "#ff480069",
+                backgroundColor: "#83c5ab !important",
                 color: "#f5f5f5",
               },
             }}
@@ -196,8 +198,10 @@ const DeleteMember = () => {
           <Button
             onClick={confirmDeleteMember}
             sx={{
+              backgroundColor: "#f44336 !important",
+              color: "#f5f5f5 !important",
               "&:hover": {
-                backgroundColor: "#d32f2f",
+                backgroundColor: "#fc5858 !important",
                 color: "#f5f5f5",
               },
             }}

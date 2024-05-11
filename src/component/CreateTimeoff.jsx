@@ -109,7 +109,7 @@ function CreateTimeoff() {
       </Button>
 
       <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
-        <DialogTitle>Create Time Off</DialogTitle>
+        <DialogTitle  sx={{ fontFamily: "Fira Sans, sans-serif", color: "#47a67e" }}>Create Time Off</DialogTitle>
         <DialogContent>
           <form className="createTimeoff-form" onSubmit={handleSubmit}>
             <div>
@@ -152,6 +152,7 @@ function CreateTimeoff() {
               />
             </div>
             <div className="dialog-buttons">
+            <div className="cancel-button">
               <Button
                 onClick={() => setOpenDialog(false)}
                 sx={{
@@ -162,12 +163,16 @@ function CreateTimeoff() {
                 }}
               >
                 Cancel
-              </Button>
+              </Button></div>
+               <div className="submit-button">
               <Button
                 type="submit"
                 sx={{
                   color: "#f5f5f5",
                   bgcolor: "#83c5ab",
+                  border: "3px solid var(--color-borders)",
+                  borderRadius: "10px",
+
                   "&:hover": {
                     backgroundColor: "#47a67e",
                     color: "#f5f5f5",
@@ -176,6 +181,7 @@ function CreateTimeoff() {
               >
                 Submit
               </Button>
+              </div>
             </div>
           </form>
         </DialogContent>
