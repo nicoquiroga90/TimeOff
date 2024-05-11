@@ -1,6 +1,6 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { apiPath } from "../api";
-import Loading from "./Loading"; // Importa tu componente Loading aquí
+import Loading from "./Loading";
 
 const TeamDataContext = createContext();
 
@@ -11,13 +11,13 @@ const TeamDataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [dataIsOld, setDataIsOld] = useState(false);
 
-const refreshTeamData = () => {
+  const refreshTeamData = () => {
     setDataIsOld(true);
   };
 
   const fetchData = async () => {
     try {
-      setLoading(true); // Establecer loading a true al inicio de la carga
+      setLoading(true);
       const [teamsResponse, membersResponse, timeOffResponse] =
         await Promise.all([
           fetch(apiPath("/teams")),
@@ -28,18 +28,16 @@ const refreshTeamData = () => {
       const teamsData = await teamsResponse.json();
       const membersData = await membersResponse.json();
       const timeOffData = await timeOffResponse.json();
-      
+
       setTeams(teamsData);
       setMembers(membersData);
       setTimeOff(timeOffData);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
-      setLoading(false); // Establecer loading a false cuando se completó la carga o ocurrió un error
+      setLoading(false);
     }
   };
-
-  
 
   useEffect(() => {
     if (dataIsOld) {
@@ -56,12 +54,7 @@ const refreshTeamData = () => {
     <TeamDataContext.Provider
       value={{ teams, members, timeOff, setMembers, refreshTeamData }}
     >
-      {/* Mostrar el componente de carga solo mientras loading es true */}
-      {loading ? (
-        <Loading open={true} />
-      ) : (
-        children // Renderizar children una vez que loading es false y los datos están cargados
-      )}
+      {loading ? <Loading open={true} /> : children}
     </TeamDataContext.Provider>
   );
 };
