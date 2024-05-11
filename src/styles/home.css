@@ -107,10 +107,6 @@
   align-items: center;
 }
 
-.home-container.light {
-  width: fit-content;
-}
-
 .home-container.dark {
   background: #000000;
   width: fit-content;
@@ -127,4 +123,55 @@
 
 .dark .submitTeam-container {
   color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .main-header {
+    font-size: 1.5em;
+  }
+
+  .main-subheader {
+    width: 85%;
+  }
+
+  .main-section {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .img-main {
+    height: 12em;
+  }
+
+  #teamCodeInput {
+    width: 80%;
+    margin: 0.5em auto;
+  }
+
+  .submitTeam-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-header {
+    font-size: 1.2em;
+  }
+
+  .img-main {
+    height: 10em;
+    padding: 1em;
+  }
+
+  #teamCodeInput {
+    width: 90%;
+  }
+
+  .submitTeam-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
