@@ -7,3 +7,16 @@
   font-size: large;
   padding: 2em;
 }
+
+@media screen and (max-width: 768px) {
+  .trial-content {
+    padding: 1em; 
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .trial-content {
+    font-size: small; 
+  }
+}

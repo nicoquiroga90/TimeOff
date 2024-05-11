@@ -28,7 +28,23 @@
   padding: 0.5em;
 }
 
-
 .dark .about-container {
   color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+.about-container {
+  border-width: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .about-container {
+    border-width: 3px;
+  }
 }

@@ -1,5 +1,3 @@
-@import "../index.css";
-
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -14,7 +12,6 @@
 
 .navbar-center {
   color: var(--color-textlight);
-  margin: 0 14em;
   font-weight: 700;
 }
 
@@ -74,4 +71,42 @@
 .dark ul li a,
 .dark .navbar-text {
   color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .navbar-center {
+    margin-top: 1em;
+  }
+
+  .button-create-team {
+    margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    padding-left: 1em;
+  }
+
+  .navbar-text {
+    margin: 0.5em;
+    font-size: 0.8em;
+  }
+
+  .button-create-team {
+    width: 16em;
+    margin: 1em 0em;
+    font-size: 0.7em;
+  }
+
+  .toggle-icon {
+    width: 30px;
+    margin-right: 0.5em;
+  }
 }
