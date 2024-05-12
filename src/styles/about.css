@@ -1,5 +1,6 @@
 .about-section {
   display: flex;
+  flex-wrap: wrap;
   background-color: var(--color-backgroundlight);
   padding: 2em;
   gap: 3em;

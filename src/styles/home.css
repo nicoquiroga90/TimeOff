@@ -20,6 +20,7 @@
 
 .main-section {
   display: flex;
+  flex-wrap: wrap;
   background-color: var(--color-backgroundlight);
   padding: 2em;
 }
@@ -135,8 +136,9 @@
   }
 
   .main-section {
-    flex-direction: column;
     padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .img-main {
@@ -162,7 +164,7 @@
 
   .img-main {
     height: 10em;
-    padding: 1em;
+    padding: 1em 0;
   }
 
   #teamCodeInput {
