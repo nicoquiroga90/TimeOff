@@ -39,7 +39,7 @@ const WelcomeTeam = () => {
             </>
           )}
         </div>
-        <img src="/logo.png" alt="Logo" className="logo" />
+        <img src="/logo2.png" alt="Logo" className="logo" />
       </div>
     </div>
   );

@@ -5,7 +5,7 @@
   width: fit-content;
   padding: 1% 1em;
   border-radius: 15px;
-  border: 3px solid whitesmoke;
+  border: 3px solid #FCE8DF;
 }
 .main-subheader {
   color: whitesmoke;
@@ -13,16 +13,15 @@
   background-color: var(--color-borders);
   padding: 1.2em;
   border-radius: 15px;
-  width: 70%;
   font-weight: 400;
-  border: 5px solid;
+  border: 5px solid #FCE8DF;
 }
 
 .main-section {
   display: flex;
-  flex-wrap: wrap;
   background-color: var(--color-backgroundlight);
   padding: 2em;
+  gap: 1em
 }
 
 .main-image-container {
@@ -67,7 +66,7 @@
 
 .submitTeam-container label {
   font-size: 1.2em;
-  color: whitesmoke;
+  color: #FCE8DF;
   font-weight: 800;
 }
 
@@ -76,31 +75,30 @@
 }
 
 .button-submit {
-  width: 17em;
-  size: 2em;
-  font-size: 1em;
-  background-color: var(--color-buttons);
-  color: var(--color-text);
-  border-radius: 15px;
-  border: 1px solid var(--color-borders);
-  text-decoration: none;
-  cursor: pointer;
-  padding: 0.5em;
-  font-weight: bolder;
+height: 3em;
+    width: 10em;
+    font-family: "Fira Sans";
+    background-color: var(--color-text);
+    color: white;
+    border-radius: 15px;
+    border: 3px solid var(--color-textlight);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-text-stroke: 1px;
 }
 
 .button-submit:hover {
-  width: 17em;
-  size: 2em;
-  font-size: 1em;
-  background-color: var(--color-text);
-  color: var(--color-buttons);
-  border-radius: 15px;
-  border: 1px solid var(--color-borders);
-  text-decoration: none;
-  cursor: pointer;
-  padding: 0.5em;
-  font-weight: bolder;
+ height: 3em;
+    width: 10em;
+    font-family: "Fira Sans";
+    background-color: var(--color-textlight);
+    border-radius: 15px;
+    border: 3px solid var(--color-text);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-text-stroke: 1px;
 }
 
 .testim-header {

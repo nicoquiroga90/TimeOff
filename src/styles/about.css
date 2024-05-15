@@ -11,8 +11,8 @@
   border: 10px solid var(--color-borders);
   margin: 0 1em 0 0;
   padding: 0.5em;
-  color: var(--color-textlight);
-  background-color: whitesmoke;
+  color: var(--color-text);
+  background-color: #FCE8DF;
   font-weight: 500;
   border-radius: 15px;
 }

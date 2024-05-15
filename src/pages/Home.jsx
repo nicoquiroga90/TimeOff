@@ -38,8 +38,8 @@ const Home = () => {
   return (
     <div className={`home-container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
-      <section className="main-section">
-        <div className="headers-container">
+      <section className="main-section" id="login">
+        <div className="headers-container" >
           <h2 className="main-header">TimeOFF</h2>
           <h3 className="main-subheader">
             TimeOFF is a web application designed to simplify the process of
@@ -59,7 +59,7 @@ const Home = () => {
       <About />
       <Testimonials />
      </section>
-      <section><FreeTrial /></section>
+      <section id="pricing"><FreeTrial /></section>
       <section><Footer /></section>
     </div>
   );

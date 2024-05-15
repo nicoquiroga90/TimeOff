@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--color-background);
+  background-color: #fce8df;
 }
 
 .footer-section {
@@ -45,7 +45,7 @@
   list-style: none;
   margin: 0;
   text-align: left;
-  color: var(--color-links);
+  color: var(--color-textlight);
   padding: 0;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .separator {
-  border-top: 0.1px solid whitesmoke;
+  border-top: 0.1px solid #fce8df;
   margin: 0;
 }
 
@@ -72,6 +72,17 @@
 .terms {
   flex: 2;
   text-align: right;
+}
+
+.login-footer,
+.about-footer,
+.prices-footer,
+.address-footer,
+.mail-footer,
+.linkedin-footer {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .dark .footer {
@@ -98,13 +109,13 @@
 
 @media screen and (max-width: 768px) {
   .footer-section {
-    flex-direction: column; 
-    }
+    flex-direction: column;
+  }
 
   .services-col,
   .contact-col,
   .social-col {
-    padding: 1em; 
+    padding: 1em;
   }
 
   .social-icons {
@@ -122,7 +133,7 @@
   .services-col,
   .contact-col,
   .social-col {
-    padding: 0.5em; 
+    padding: 0.5em;
   }
 
   .social-icons {

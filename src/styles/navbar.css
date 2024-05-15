@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--color-background);
+  background-color: #FCE8DF;
 }
 
 .logo {
@@ -17,7 +17,7 @@
 
 .navbar-center a {
   text-decoration: none;
-  color: var(--color-textlight);
+  color: #469574;
 }
 
 .navbar-center a :hover {
@@ -33,23 +33,24 @@
 .button-create-team {
   height: 3em;
   width: 10em;
-  background-color: var(--color-buttons);
-  color: var(--color-text);
+  font-family: "Fira Sans";
+  background-color: var(--color-text);
+  color: white;
   border-radius: 15px;
-  border: 3px solid var(--color-borders);
+  border: 3px solid var(--color-textlight);
   text-decoration: none;
   cursor: pointer;
   font-size: 1em;
-  -webkit-text-stroke: 1.1px;
+  -webkit-text-stroke: 1px;
 }
 
 .button-create-team:hover {
   height: 3em;
   width: 10em;
   background-color: var(--color-textlight);
-  color: var(--color-buttons);
+  color: #FCE8DF;
   border-radius: 15px;
-  border: 3px solid var(--color-borders);
+  border: 3px solid var(--color-text);
   text-decoration: none;
   cursor: pointer;
   font-size: 1em;
